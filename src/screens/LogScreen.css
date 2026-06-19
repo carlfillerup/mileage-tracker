@@ -1,0 +1,93 @@
+.log-screen {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.log-list {
+  max-height: 65vh;
+  overflow-y: auto;
+  border: 2px solid var(--border);
+  border-radius: 4px;
+  background: var(--panel);
+}
+
+.log-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 8px;
+  border-bottom: 1px solid #1a2744;
+  gap: 6px;
+}
+
+.log-row.has-entry {
+  background: #0f1e3a;
+}
+
+.log-row.today {
+  border: 2px solid var(--yellow);
+  border-radius: 3px;
+}
+
+.log-date {
+  font-size: 5px;
+  color: var(--muted);
+  min-width: 80px;
+  flex-shrink: 0;
+}
+
+.log-inputs {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.log-input {
+  width: 40px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 6px;
+  padding: 4px;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  background: var(--bg);
+  color: var(--white);
+  text-align: center;
+  -moz-appearance: textfield;
+}
+
+.log-input::-webkit-inner-spin-button,
+.log-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.walk-input { border-color: var(--walk); color: var(--walk); }
+.bike-input { border-color: var(--bike); color: var(--bike); }
+.swim-input { border-color: var(--swim); color: var(--swim); }
+
+.log-total {
+  font-size: 6px;
+  color: var(--yellow);
+  min-width: 32px;
+  text-align: right;
+}
+
+.save-btn {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 8px;
+  padding: 12px;
+  background: var(--green);
+  color: #000;
+  border: 2px solid var(--green);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.save-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.save-btn:hover:not(:disabled) {
+  background: #22c55e;
+}

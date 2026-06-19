@@ -1,0 +1,37 @@
+.app-title {
+  font-size: 10px;
+  text-align: center;
+  color: var(--yellow);
+  padding: 12px 0 8px;
+  letter-spacing: 1px;
+}
+
+.nav-bar {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+.nav-btn {
+  flex: 1;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 7px;
+  padding: 10px 8px;
+  background: #2a4f7a;
+  color: #fff;
+  border: 2px solid #a0c8f0;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.nav-btn:hover:not(.active) {
+  background: #3a6090;
+  color: #fff;
+  border-color: #c0d8f0;
+}
+
+.nav-btn.active {
+  background: var(--yellow);
+  color: #000;
+  border-color: var(--yellow);
+}

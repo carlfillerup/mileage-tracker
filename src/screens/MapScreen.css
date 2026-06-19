@@ -1,0 +1,76 @@
+.map-screen {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stat-row {
+  display: flex;
+  gap: 6px;
+}
+
+.stat-box {
+  flex: 1;
+  background: var(--panel);
+  border: 2px solid;
+  border-radius: 4px;
+  padding: 8px 4px;
+  text-align: center;
+}
+
+.stat-label {
+  font-size: 6px;
+  margin-bottom: 6px;
+}
+
+.stat-value {
+  font-size: 10px;
+}
+
+.xp-bar-container {
+  position: relative;
+  height: 22px;
+  background: var(--panel);
+  border: 2px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.xp-bar-fill {
+  height: 100%;
+  background: var(--green);
+  transition: width 0.5s ease;
+}
+
+.xp-bar-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 6px;
+  color: var(--white);
+  text-shadow: 1px 1px 0 #000;
+}
+
+.map-svg {
+  width: 100%;
+  border: 2px solid var(--border);
+  border-radius: 4px;
+  background: var(--panel);
+}
+
+.activity-row {
+  display: flex;
+  gap: 6px;
+}
+
+.activity-box {
+  flex: 1;
+  font-size: 6px;
+  text-align: center;
+  padding: 6px 4px;
+  background: var(--panel);
+  border: 1px solid;
+  border-radius: 4px;
+}
