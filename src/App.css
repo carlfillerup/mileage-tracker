@@ -1,9 +1,71 @@
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+}
+
 .app-title {
   font-size: 10px;
-  text-align: center;
   color: var(--yellow);
-  padding: 12px 0 8px;
   letter-spacing: 1px;
+}
+
+.auth-area {
+  flex-shrink: 0;
+}
+
+.auth-btn {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 6px;
+  padding: 6px 10px;
+  background: var(--panel);
+  color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.auth-btn:hover {
+  color: var(--white);
+  border-color: var(--white);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: var(--panel);
+  border: 2px solid var(--border);
+  border-radius: 4px;
+  padding: 12px;
+  margin-bottom: 8px;
+}
+
+.login-input {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 7px;
+  padding: 8px;
+  background: var(--bg);
+  color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+}
+
+.login-submit {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 7px;
+  padding: 8px;
+  background: var(--green);
+  color: #000;
+  border: 2px solid var(--green);
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.login-error {
+  font-size: 6px;
+  color: var(--red);
 }
 
 .nav-bar {

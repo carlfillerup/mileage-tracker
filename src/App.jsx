@@ -11,6 +11,11 @@ const TABS = ['MAP', 'LOG', 'PACE', 'SUMMARY']
 
 export default function App() {
   const [tab, setTab] = useState('MAP')
+  const [user, setUser] = useState(null)
+  const [showLogin, setShowLogin] = useState(false)
+  const [loginEmail, setLoginEmail] = useState('')
+  const [loginPassword, setLoginPassword] = useState('')
+  const [loginError, setLoginError] = useState('')
   const [entries, setEntries] = useState(() => {
     const map = {}
     getAllDates().forEach(d => {
@@ -19,6 +24,17 @@ export default function App() {
     return map
   })
   const [saving, setSaving] = useState(false)
+
+  useEffect(() => {
+    if (!supabase) return
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setUser(session?.user ?? null)
+    })
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user ?? null)
+    })
+    return () => subscription.unsubscribe()
+  }, [])
 
   useEffect(() => {
     if (!supabase) return
@@ -43,6 +59,29 @@ export default function App() {
       })
   }, [])
 
+  const handleLogin = async (e) => {
+    e.preventDefault()
+    setLoginError('')
+    const { error } = await supabase.auth.signInWithPassword({
+      email: loginEmail,
+      password: loginPassword,
+    })
+    if (error) {
+      setLoginError(error.message)
+    } else {
+      setShowLogin(false)
+      setLoginEmail('')
+      setLoginPassword('')
+    }
+  }
+
+  const handleLogout = async () => {
+    await supabase.auth.signOut()
+    setUser(null)
+  }
+
+  const isOwner = !!user
+
   const updateEntry = (key, field, value) => {
     setEntries(prev => ({
       ...prev,
@@ -53,6 +92,10 @@ export default function App() {
   const saveAll = async () => {
     if (!supabase) {
       alert('Supabase not configured. Add your credentials to .env')
+      return
+    }
+    if (!isOwner) {
+      alert('You must be logged in to save.')
       return
     }
     setSaving(true)
@@ -83,7 +126,40 @@ export default function App() {
 
   return (
     <div className="app">
-      <h1 className="app-title">MILEAGE TRACKER 2026</h1>
+      <div className="app-header">
+        <h1 className="app-title">MILEAGE TRACKER 2026</h1>
+        <div className="auth-area">
+          {isOwner ? (
+            <button className="auth-btn" onClick={handleLogout}>LOGOUT</button>
+          ) : (
+            <button className="auth-btn" onClick={() => setShowLogin(!showLogin)}>LOGIN</button>
+          )}
+        </div>
+      </div>
+
+      {showLogin && !isOwner && (
+        <form className="login-form" onSubmit={handleLogin}>
+          <input
+            type="email"
+            placeholder="Email"
+            value={loginEmail}
+            onChange={e => setLoginEmail(e.target.value)}
+            className="login-input"
+            required
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={loginPassword}
+            onChange={e => setLoginPassword(e.target.value)}
+            className="login-input"
+            required
+          />
+          <button type="submit" className="login-submit">SIGN IN</button>
+          {loginError && <div className="login-error">{loginError}</div>}
+        </form>
+      )}
+
       <nav className="nav-bar">
         {TABS.map(t => (
           <button
@@ -103,6 +179,7 @@ export default function App() {
             updateEntry={updateEntry}
             saveAll={saveAll}
             saving={saving}
+            readOnly={!isOwner}
           />
         )}
         {tab === 'PACE' && <PaceScreen totals={totals} entries={entries} />}

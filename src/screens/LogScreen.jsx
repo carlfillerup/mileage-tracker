@@ -9,7 +9,7 @@ function todayKey() {
   return dateToKey(t)
 }
 
-export default function LogScreen({ entries, updateEntry, saveAll, saving }) {
+export default function LogScreen({ entries, updateEntry, saveAll, saving, readOnly }) {
   const todayRef = useRef(null)
   const tk = todayKey()
 
@@ -50,6 +50,7 @@ export default function LogScreen({ entries, updateEntry, saveAll, saving }) {
                   value={e.walk || ''}
                   placeholder="0"
                   onChange={ev => handleChange(key, 'walk', ev.target.value)}
+                  disabled={readOnly}
                 />
                 <input
                   type="number"
@@ -59,6 +60,7 @@ export default function LogScreen({ entries, updateEntry, saveAll, saving }) {
                   value={e.bike || ''}
                   placeholder="0"
                   onChange={ev => handleChange(key, 'bike', ev.target.value)}
+                  disabled={readOnly}
                 />
                 <input
                   type="number"
@@ -68,6 +70,7 @@ export default function LogScreen({ entries, updateEntry, saveAll, saving }) {
                   value={e.swim || ''}
                   placeholder="0"
                   onChange={ev => handleChange(key, 'swim', ev.target.value)}
+                  disabled={readOnly}
                 />
                 <span className="log-total">{total > 0 ? total.toFixed(1) : ''}</span>
               </div>
@@ -75,9 +78,11 @@ export default function LogScreen({ entries, updateEntry, saveAll, saving }) {
           )
         })}
       </div>
-      <button className="save-btn" onClick={saveAll} disabled={saving}>
-        {saving ? 'SAVING...' : 'SAVE'}
-      </button>
+      {!readOnly && (
+        <button className="save-btn" onClick={saveAll} disabled={saving}>
+          {saving ? 'SAVING...' : 'SAVE'}
+        </button>
+      )}
     </div>
   )
 }
