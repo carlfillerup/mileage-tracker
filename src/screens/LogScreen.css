@@ -4,6 +4,24 @@
   gap: 8px;
 }
 
+.log-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 8px;
+  gap: 6px;
+}
+
+.col-header {
+  width: 40px;
+  font-size: 5px;
+  text-align: center;
+}
+
+.walk-header { color: #4ade80; }
+.bike-header { color: #38bdf8; }
+.swim-header { color: #a78bfa; }
+
 .log-list {
   max-height: 65vh;
   overflow-y: auto;

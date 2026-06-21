@@ -68,40 +68,15 @@ export default function MapScreen({ totals }) {
         {WAYPOINTS.map((wp, i) => (
           <g key={i}>
             <circle cx={wp.x} cy={wp.y} r={wp.dotSize} fill={wp.color} />
-            {wp.labelBox ? (
-              <g>
-                <rect
-                  x={wp.x - (wp.tag ? 38 : 30)}
-                  y={wp.y + 8}
-                  width={wp.tag ? 76 : 60}
-                  height={14}
-                  fill="var(--panel)"
-                  stroke={wp.labelColor}
-                  strokeWidth="1"
-                  rx="2"
-                />
-                <text
-                  x={wp.x}
-                  y={wp.y + 18}
-                  fill={wp.labelColor}
-                  fontSize="4"
-                  fontFamily="'Press Start 2P'"
-                  textAnchor="middle"
-                >
-                  {wp.tag ? `${wp.tag} / ${wp.label}` : wp.label}
-                </text>
-              </g>
-            ) : (
-              <text
-                x={wp.x + 6}
-                y={wp.y + 3}
-                fill="var(--muted)"
-                fontSize="4"
-                fontFamily="'Press Start 2P'"
-              >
-                {wp.label}
-              </text>
-            )}
+            <text
+              x={wp.x + 6}
+              y={wp.y + 3}
+              fill={wp.color}
+              fontSize="4"
+              fontFamily="'Press Start 2P'"
+            >
+              {wp.label}
+            </text>
           </g>
         ))}
 

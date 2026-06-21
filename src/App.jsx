@@ -127,7 +127,7 @@ export default function App() {
   return (
     <div className="app">
       <div className="app-header">
-        <h1 className="app-title">MILEAGE TRACKER 2026</h1>
+        <h1 className="app-title">CARL'S MILEAGE TRACKER 2026</h1>
         <div className="auth-area">
           {isOwner ? (
             <button className="auth-btn" onClick={handleLogout}>LOGOUT</button>

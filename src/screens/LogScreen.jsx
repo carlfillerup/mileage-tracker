@@ -26,6 +26,15 @@ export default function LogScreen({ entries, updateEntry, saveAll, saving, readO
 
   return (
     <div className="log-screen">
+      <div className="log-header">
+        <span className="log-date"></span>
+        <div className="log-inputs">
+          <span className="col-header walk-header">Walk (mi)</span>
+          <span className="col-header bike-header">Bike (mi)</span>
+          <span className="col-header swim-header">Swim (mi)</span>
+          <span className="log-total"></span>
+        </div>
+      </div>
       <div className="log-list">
         {ALL_DATES.map(date => {
           const key = dateToKey(date)

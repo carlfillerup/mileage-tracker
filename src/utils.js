@@ -3,14 +3,14 @@ export const YEAR = 2026
 export const TOTAL_DAYS = 365
 
 export const WAYPOINTS = [
-  { x: 291, y: 46, label: 'Layton, UT', tag: 'START', color: 'var(--green)', dotSize: 5, labelBox: true, labelColor: 'var(--green)' },
-  { x: 298, y: 65, label: 'Provo', color: 'var(--muted)', dotSize: 3 },
-  { x: 255, y: 139, label: 'St. George', color: 'var(--muted)', dotSize: 3 },
-  { x: 220, y: 161, label: 'Las Vegas', color: 'var(--yellow)', dotSize: 4, labelBox: true, labelColor: 'var(--yellow)' },
-  { x: 200, y: 183, label: 'Baker', color: 'var(--blue)', dotSize: 3 },
-  { x: 178, y: 191, label: 'Barstow', color: 'var(--blue)', dotSize: 3 },
-  { x: 172, y: 210, label: 'San Bernardino', color: 'var(--blue)', dotSize: 3 },
-  { x: 165, y: 226, label: 'San Clemente, CA', tag: 'GOAL', color: 'var(--yellow)', dotSize: 5, labelBox: true, labelColor: 'var(--yellow)' },
+  { x: 291, y: 46, label: 'START: HOME / LAYTON, UT', color: '#4ade80', dotSize: 5 },
+  { x: 298, y: 65, label: 'Provo', color: '#38bdf8', dotSize: 3 },
+  { x: 255, y: 139, label: 'St. George', color: '#38bdf8', dotSize: 3 },
+  { x: 220, y: 161, label: 'Las Vegas', color: '#38bdf8', dotSize: 4 },
+  { x: 200, y: 183, label: 'Baker', color: '#38bdf8', dotSize: 3 },
+  { x: 178, y: 191, label: 'Barstow', color: '#38bdf8', dotSize: 3 },
+  { x: 172, y: 210, label: 'San Bernardino', color: '#38bdf8', dotSize: 3 },
+  { x: 165, y: 226, label: 'GOAL: SAN CLEMENTE, CA', color: '#fbbf24', dotSize: 5 },
 ]
 
 export function getDayOfYear(date = new Date()) {
