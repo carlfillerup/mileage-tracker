@@ -48,7 +48,7 @@ export default function MapScreen({ totals }) {
         {/* State labels */}
         <text x="290" y="90" fill="#2a4a7a" fontSize="8" fontFamily="'Press Start 2P'" textAnchor="middle">UTAH</text>
         <text x="175" y="70" fill="#2a4a7a" fontSize="8" fontFamily="'Press Start 2P'" textAnchor="middle">NEVADA</text>
-        <text x="100" y="170" fill="#2a4a7a" fontSize="7" fontFamily="'Press Start 2P'" textAnchor="middle">CALIF.</text>
+        <text x="85" y="170" fill="#2a4a7a" fontSize="5" fontFamily="'Press Start 2P'" textAnchor="middle">CALIFORNIA</text>
 
         {/* Dashed route line */}
         <path d={routeD} fill="none" stroke="#1e3a5f" strokeWidth="2" strokeDasharray="6,3" />
@@ -67,12 +67,16 @@ export default function MapScreen({ totals }) {
         {/* Waypoint dots and labels */}
         {WAYPOINTS.map((wp, i) => (
           <g key={i}>
-            <circle cx={wp.x} cy={wp.y} r={wp.dotSize} fill={wp.color} />
+            {wp.stroke ? (
+              <circle cx={wp.x} cy={wp.y} r={wp.dotSize} fill="#1e3a5f" stroke="#38bdf8" strokeWidth="1" />
+            ) : (
+              <circle cx={wp.x} cy={wp.y} r={wp.dotSize} fill={wp.color} />
+            )}
             <text
               x={wp.x + 6}
               y={wp.y + 3}
               fill={wp.color}
-              fontSize="4"
+              fontSize={wp.stroke ? '3.5' : '4'}
               fontFamily="'Press Start 2P'"
             >
               {wp.label}

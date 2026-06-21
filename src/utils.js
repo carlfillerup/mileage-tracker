@@ -5,6 +5,10 @@ export const TOTAL_DAYS = 365
 export const WAYPOINTS = [
   { x: 291, y: 46, label: 'START: HOME / LAYTON, UT', color: '#4ade80', dotSize: 5 },
   { x: 298, y: 65, label: 'Provo', color: '#38bdf8', dotSize: 3 },
+  { x: 284, y: 82, label: 'Nephi', color: '#38bdf8', dotSize: 2.5, stroke: true },
+  { x: 272, y: 98, label: 'Fillmore', color: '#38bdf8', dotSize: 2.5, stroke: true },
+  { x: 264, y: 114, label: 'Beaver', color: '#38bdf8', dotSize: 2.5, stroke: true },
+  { x: 258, y: 126, label: 'Cedar City', color: '#38bdf8', dotSize: 2.5, stroke: true },
   { x: 255, y: 139, label: 'St. George', color: '#38bdf8', dotSize: 3 },
   { x: 220, y: 161, label: 'Las Vegas', color: '#38bdf8', dotSize: 4 },
   { x: 200, y: 183, label: 'Baker', color: '#38bdf8', dotSize: 3 },
