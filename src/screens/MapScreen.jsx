@@ -46,9 +46,9 @@ export default function MapScreen({ totals }) {
         <polygon points="18,24 112,24 112,94 245,189 230,243 177,248 175,243 166,227 146,210 101,200 69,151 58,122 27,107 22,71 18,47" fill="#0f2040" stroke="#4a7ab5" strokeWidth="1.5" />
 
         {/* State labels */}
-        <text x="290" y="90" fill="#2a4a7a" fontSize="8" fontFamily="'Press Start 2P'" textAnchor="middle">UTAH</text>
-        <text x="175" y="70" fill="#2a4a7a" fontSize="8" fontFamily="'Press Start 2P'" textAnchor="middle">NEVADA</text>
-        <text x="85" y="170" fill="#2a4a7a" fontSize="5" fontFamily="'Press Start 2P'" textAnchor="middle">CALIFORNIA</text>
+        <text x="301" y="88" fill="#e2e8f0" fontSize="7" fontFamily="'Press Start 2P'" textAnchor="middle">UTAH</text>
+        <text x="175" y="95" fill="#e2e8f0" fontSize="7" fontFamily="'Press Start 2P'" textAnchor="middle">NEVADA</text>
+        <text x="68" y="158" fill="#e2e8f0" fontSize="7" fontFamily="'Press Start 2P'" textAnchor="middle">CALIFORNIA</text>
 
         {/* Dashed route line */}
         <path d={routeD} fill="none" stroke="#1e3a5f" strokeWidth="2" strokeDasharray="6,3" />
