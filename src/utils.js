@@ -3,7 +3,7 @@ export const YEAR = 2026
 export const TOTAL_DAYS = 365
 
 export const WAYPOINTS = [
-  { x: 291, y: 46, label: 'START: HOME / LAYTON, UT', color: '#4ade80', dotSize: 5 },
+  { x: 291, y: 46, label: 'START: HOME', color: '#4ade80', dotSize: 5 },
   { x: 298, y: 65, label: 'Provo', color: '#38bdf8', dotSize: 3 },
   { x: 284, y: 82, label: 'Nephi', color: '#38bdf8', dotSize: 2.5, stroke: true },
   { x: 272, y: 98, label: 'Fillmore', color: '#38bdf8', dotSize: 2.5, stroke: true },

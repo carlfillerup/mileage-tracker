@@ -48,7 +48,7 @@ export default function MapScreen({ totals }) {
         {/* State labels */}
         <text x="301" y="88" fill="#e2e8f0" fontSize="7" fontFamily="'Press Start 2P'" textAnchor="middle">UTAH</text>
         <text x="175" y="95" fill="#e2e8f0" fontSize="7" fontFamily="'Press Start 2P'" textAnchor="middle">NEVADA</text>
-        <text x="68" y="158" fill="#e2e8f0" fontSize="7" fontFamily="'Press Start 2P'" textAnchor="middle">CALIFORNIA</text>
+        <text x="62" y="175" fill="#e2e8f0" fontSize="7" fontFamily="'Press Start 2P'" textAnchor="middle">CALIFORNIA</text>
 
         {/* Dashed route line */}
         <path d={routeD} fill="none" stroke="#1e3a5f" strokeWidth="2" strokeDasharray="6,3" />
